@@ -8,8 +8,7 @@
 </p>
 ## Install
 
-
-npm install
+npm install <br/>
 composer install
 
 #run

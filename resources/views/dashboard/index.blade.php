@@ -49,17 +49,15 @@
             @include('components.list-product-mobile', ['productCategory' => $productCategory])
         </div>
 
-        <div class="md:hidden fixed bottom-0 w-full h-[180px] left-0 flex flex-col gap-3">
-            <div class="w-full flex justify-end items-center px-5">
-                <a href="{{ route('cart.index') }}"> <button
-                        class="relative rounded-full h-[40px] w-[40px] grid place-content-center text-white bg-primary"><i
-                            class='bx bx-cart-add text-xl'></i>
-                        <div class="sum">
-                            @include('components.quantity', ['sum' => $sum])
-                        </div>
-                    </button></a>
-            </div>
-            <div class="p-5 bg-white h-full shadow-lg rounded-t-xl flex flex-col justify-between shad-custom">
+        <div class="md:hidden fixed bottom-0 w-full  left-0 flex flex-col gap-3">
+            <a href="{{ route('cart.index') }}"> <button
+                    class="absolute right-4 -top-10 rounded-full h-[40px] w-[40px] grid place-content-center text-white bg-primary"><i
+                        class='bx bx-cart-add text-xl'></i>
+                    <div class="sum">
+                        @include('components.quantity', ['sum' => $sum])
+                    </div>
+                </button></a>
+            <div class="p-5 bg-white h-full gap-2 shadow-lg rounded-t-xl flex flex-col justify-between shad-custom">
                 <button type="button" data-drawer-target="drawer-bottom-category" data-drawer-show="drawer-bottom-category"
                     data-drawer-placement="bottom" aria-controls="drawer-bottom-category"
                     class="border-primary border text-primary rounded py-2 text-sm">+

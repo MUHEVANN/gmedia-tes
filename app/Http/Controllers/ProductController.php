@@ -62,10 +62,10 @@ class ProductController extends Controller
                     'products' => view('components.card-product', compact('products'))->render(),
                 ]);
             }
-            return redirect()->back()->with('success', 'Category created successfully');
+            return redirect()->back()->with('success', 'Product created successfully');
         }
 
-        return redirect()->back()->with('error', 'Failed to create category');
+        return redirect()->back()->with('error', 'Failed to create product');
     }
 
     public function search()

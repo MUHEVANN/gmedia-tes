@@ -11,10 +11,9 @@
 npm install <br/>
 composer install
 
-#run
+## run
 
-
-jalan kan 2 perintah
+jalan kan 2 perintah <br/>
 php artisan serve & npm run dev
 
 ## About Laravel

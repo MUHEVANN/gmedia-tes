@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SocialLoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,6 +21,11 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('register', 'register')->name('register');
     Route::post('login', 'login')->name('login');
     Route::post('logout', 'logout')->name('logout');
+
+
+    // socialite
+    Route::get('/{driver}/redirect', [SocialLoginController::class, 'redirect'])->where('driver', 'google|github')->name('social-redirect');
+    Route::get('/{driver}/login', [SocialLoginController::class, 'callback'])->where('driver', 'google|github')->name('social-login');
 });
 
 

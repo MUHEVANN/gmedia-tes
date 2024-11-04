@@ -28,6 +28,12 @@
             </div>
             <div class="flex items-center flex-col gap-2">
                 <x-button type="submit">Login</x-button>
+                <div class="flex gap-4 w-full mt-3"><a href="/auth/google/redirect"
+                        class="border shadow py-2 justify-center items-center w-full flex "><i
+                            class='bx bxl-google'></i></a>
+                    <a href="/auth/github/redirect" class="border shadow py-2 justify-center items-center w-full flex "><i
+                            class='bx bxl-github me-3'></i></a>
+                </div>
                 <span class="text-sm">Belum punya akun?<a href="{{ route('register-page') }}"
                         class="text-blue-500 ms-2">register</a></span>
             </div>

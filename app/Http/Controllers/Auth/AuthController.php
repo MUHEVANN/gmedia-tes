@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\RegisterJob;
 use App\Models\Cart;
 use App\Models\User;
+use App\Notifications\RegisterNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -62,10 +64,12 @@ class AuthController extends Controller
 
         $user = User::create([
             'username' => request('username'),
-            'password' => Hash::make(request('password'))
+            'password' => Hash::make(request('password')),
+            'email' => 'tes@gmail.com'
         ]);
 
         if ($user) {
+            RegisterJob::dispatch($user);
             Cart::firstOrCreate([
                 "user_id" => $user->id,
             ]);
